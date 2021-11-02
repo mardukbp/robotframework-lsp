@@ -10,10 +10,11 @@ import {
     workspace,
     WorkspaceFolder,
 } from "vscode";
-import { logError } from "./channel";
+import { clearRobotFrameworkLog, logError, RF_LOG_CHANNEL } from "./channel";
 import * as path from "path";
 import { parse } from "jsonc-parser";
 import * as fs from "fs";
+import { ListenerServer } from "./ListenerServer";
 
 interface ITestInfo {
     uri: string;
@@ -205,6 +206,8 @@ async function _debug(params: ITestInfo | undefined, noDebug: boolean) {
         }
     }
 
+    clearRobotFrameworkLog();
+    new ListenerServer();
     let debugSessionOptions: DebugSessionOptions = { "noDebug": noDebug };
     debug.startDebugging(workspaceFolder, debugConfiguration, debugSessionOptions);
 }

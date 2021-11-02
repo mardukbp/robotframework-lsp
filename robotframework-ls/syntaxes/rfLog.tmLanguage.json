@@ -1,0 +1,17 @@
+{
+    "scopeName": "code.output",
+    "patterns": [{ "include": "#expression" }],
+    "repository": {
+      "expression": {
+        "patterns": [{ "include": "#info" }, { "include": "#fail" }]
+      },
+      "info": {
+        "match": "INFO",
+        "name": "keyword.info"
+      },
+      "fail": {
+        "match": "FAIL",
+        "name": "string.fail"
+      }
+    }
+  }

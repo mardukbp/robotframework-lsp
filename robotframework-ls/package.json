@@ -299,6 +299,12 @@
                     ".resource"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "rf-log",
+                "mimetypes": [
+                    "text/x-code-output"
+                ]
             }
         ],
         "grammars": [
@@ -306,6 +312,11 @@
                 "language": "robotframework",
                 "scopeName": "source.robot",
                 "path": "./syntaxes/robotframework.tmLanguage.json"
+            },
+            {
+                "language": "rf-log",
+                "scopeName": "code.output",
+                "path": "./syntaxes/rfLog.tmLanguage.json"
             }
         ],
         "keybindings": [

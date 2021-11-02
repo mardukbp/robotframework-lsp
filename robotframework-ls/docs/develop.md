@@ -19,6 +19,15 @@ Building a VSIX locally
 To build a VSIX, follow the steps in https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 (if everything is setup, `vsce package` from the root directory should do it).
 
+[Node.JS 12](https://nodejs.org/es/blog/release/v12.13.0/) is required.
+
+1. `yarn install`
+2. `npm install -g vsce`
+3. `pip install fire`
+4. `python -m dev vendor-robocorp-ls-core`
+5. `python -m dev vendor-robotframework-interactive`
+6. `vsce package`
+
 New version release
 --------------------
 

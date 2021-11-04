@@ -6,8 +6,6 @@ export const RF_LOG_CHANNEL = window.createOutputChannel("Robot Framework Log");
 
 type LogEntry = {
     logLevel: string
-    testName: string
-    keyword: string
     message: string
 }
 
@@ -16,8 +14,8 @@ export function clearRobotFrameworkLog() {
 }
 
 export async function logRobotFramework(logEntry: string) {
-    const { logLevel, testName, keyword, message } = JSON.parse(logEntry) as LogEntry
-    let logMessage = `Test: ${testName}\nKeyword: ${keyword}\n${logLevel} - ${message}`
+    const { logLevel, message } = JSON.parse(logEntry) as LogEntry
+    let logMessage = `${logLevel} - ${message}`
     RF_LOG_CHANNEL.appendLine(logMessage);
 }
 
